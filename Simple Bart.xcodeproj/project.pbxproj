@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0666C8F17726010A69434769 /* Pods_Simple_Bart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C86CC8B79F349C9CBBC9292 /* Pods_Simple_Bart.framework */; };
+		5448195A1D1E60AB003CCCB4 /* BartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544819591D1E60AB003CCCB4 /* BartResponse.swift */; };
+		54649FAC1D1A407D00771558 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54649FAB1D1A407D00771558 /* HttpClient.swift */; };
 		54CE027C1D1A040200BEC2A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE027B1D1A040200BEC2A5 /* AppDelegate.swift */; };
 		54CE027E1D1A040200BEC2A5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE027D1D1A040200BEC2A5 /* MapViewController.swift */; };
 		54CE02801D1A040200BEC2A5 /* DeparturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE027F1D1A040200BEC2A5 /* DeparturesViewController.swift */; };
 		54CE02831D1A040200BEC2A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CE02811D1A040200BEC2A5 /* Main.storyboard */; };
 		54CE02851D1A040200BEC2A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54CE02841D1A040200BEC2A5 /* Assets.xcassets */; };
 		54CE02881D1A040200BEC2A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CE02861D1A040200BEC2A5 /* LaunchScreen.storyboard */; };
+		54D053CC1D1A2A6900076586 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54D053CB1D1A2A6900076586 /* keys.plist */; };
+		54D053D01D1A2ACC00076586 /* BartApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D053CF1D1A2ACC00076586 /* BartApi.swift */; };
+		54D053D31D1A3A2C00076586 /* BartDeparture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D053D21D1A3A2C00076586 /* BartDeparture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C86CC8B79F349C9CBBC9292 /* Pods_Simple_Bart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simple_Bart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		544819591D1E60AB003CCCB4 /* BartResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartResponse.swift; sourceTree = "<group>"; };
+		54649FAB1D1A407D00771558 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		54CE02781D1A040200BEC2A5 /* Simple Bart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Bart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54CE027B1D1A040200BEC2A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54CE027D1D1A040200BEC2A5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +33,13 @@
 		54CE02841D1A040200BEC2A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54CE02871D1A040200BEC2A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54CE02891D1A040200BEC2A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54D053C41D1A259200076586 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		54D053CB1D1A2A6900076586 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		54D053CD1D1A2A9900076586 /* keys.example.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.example.plist; sourceTree = "<group>"; };
+		54D053CF1D1A2ACC00076586 /* BartApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartApi.swift; sourceTree = "<group>"; };
+		54D053D21D1A3A2C00076586 /* BartDeparture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartDeparture.swift; sourceTree = "<group>"; };
+		90F43B9D5B69325122E568D6 /* Pods-Simple Bart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Bart.release.xcconfig"; path = "Pods/Target Support Files/Pods-Simple Bart/Pods-Simple Bart.release.xcconfig"; sourceTree = "<group>"; };
+		96D1B95C68D53788B34F1BF6 /* Pods-Simple Bart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Bart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Simple Bart/Pods-Simple Bart.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +47,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0666C8F17726010A69434769 /* Pods_Simple_Bart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2106173934F7E60FED0E12FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C86CC8B79F349C9CBBC9292 /* Pods_Simple_Bart.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3CAEE7AF2D57A26CBA0E0C39 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				96D1B95C68D53788B34F1BF6 /* Pods-Simple Bart.debug.xcconfig */,
+				90F43B9D5B69325122E568D6 /* Pods-Simple Bart.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		544819581D1E6093003CCCB4 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				54D053D21D1A3A2C00076586 /* BartDeparture.swift */,
+				544819591D1E60AB003CCCB4 /* BartResponse.swift */,
+			);
+			name = api;
+			sourceTree = "<group>";
+		};
 		54CE026F1D1A040200BEC2A5 = {
 			isa = PBXGroup;
 			children = (
 				54CE027A1D1A040200BEC2A5 /* Simple Bart */,
+				54D053CB1D1A2A6900076586 /* keys.plist */,
+				54D053CD1D1A2A9900076586 /* keys.example.plist */,
+				54D053C41D1A259200076586 /* .gitignore */,
 				54CE02791D1A040200BEC2A5 /* Products */,
+				3CAEE7AF2D57A26CBA0E0C39 /* Pods */,
+				2106173934F7E60FED0E12FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +104,34 @@
 		54CE027A1D1A040200BEC2A5 /* Simple Bart */ = {
 			isa = PBXGroup;
 			children = (
-				54CE027B1D1A040200BEC2A5 /* AppDelegate.swift */,
-				54CE027D1D1A040200BEC2A5 /* MapViewController.swift */,
-				54CE027F1D1A040200BEC2A5 /* DeparturesViewController.swift */,
+				54D053C11D1A23C500076586 /* src */,
 				54CE02811D1A040200BEC2A5 /* Main.storyboard */,
 				54CE02841D1A040200BEC2A5 /* Assets.xcassets */,
 				54CE02861D1A040200BEC2A5 /* LaunchScreen.storyboard */,
 				54CE02891D1A040200BEC2A5 /* Info.plist */,
 			);
 			path = "Simple Bart";
+			sourceTree = "<group>";
+		};
+		54D053C11D1A23C500076586 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				54D053D11D1A2D8C00076586 /* bart */,
+				54CE027B1D1A040200BEC2A5 /* AppDelegate.swift */,
+				54CE027F1D1A040200BEC2A5 /* DeparturesViewController.swift */,
+				54CE027D1D1A040200BEC2A5 /* MapViewController.swift */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		54D053D11D1A2D8C00076586 /* bart */ = {
+			isa = PBXGroup;
+			children = (
+				544819581D1E6093003CCCB4 /* api */,
+				54D053CF1D1A2ACC00076586 /* BartApi.swift */,
+				54649FAB1D1A407D00771558 /* HttpClient.swift */,
+			);
+			name = bart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +141,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54CE028C1D1A040200BEC2A5 /* Build configuration list for PBXNativeTarget "Simple Bart" */;
 			buildPhases = (
+				8488AC89A1F6963B514432FA /* 📦 Check Pods Manifest.lock */,
 				54CE02741D1A040200BEC2A5 /* Sources */,
 				54CE02751D1A040200BEC2A5 /* Frameworks */,
 				54CE02761D1A040200BEC2A5 /* Resources */,
+				8BC7C5B11674BF33EA1C57A5 /* 📦 Embed Pods Frameworks */,
+				7C210ED5DC36EF897129EBE8 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,6 +196,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54D053CC1D1A2A6900076586 /* keys.plist in Resources */,
 				54CE02881D1A040200BEC2A5 /* LaunchScreen.storyboard in Resources */,
 				54CE02851D1A040200BEC2A5 /* Assets.xcassets in Resources */,
 				54CE02831D1A040200BEC2A5 /* Main.storyboard in Resources */,
@@ -133,6 +204,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7C210ED5DC36EF897129EBE8 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Simple Bart/Pods-Simple Bart-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8488AC89A1F6963B514432FA /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8BC7C5B11674BF33EA1C57A5 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Simple Bart/Pods-Simple Bart-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		54CE02741D1A040200BEC2A5 /* Sources */ = {
@@ -142,6 +261,10 @@
 				54CE02801D1A040200BEC2A5 /* DeparturesViewController.swift in Sources */,
 				54CE027C1D1A040200BEC2A5 /* AppDelegate.swift in Sources */,
 				54CE027E1D1A040200BEC2A5 /* MapViewController.swift in Sources */,
+				54D053D01D1A2ACC00076586 /* BartApi.swift in Sources */,
+				5448195A1D1E60AB003CCCB4 /* BartResponse.swift in Sources */,
+				54649FAC1D1A407D00771558 /* HttpClient.swift in Sources */,
+				54D053D31D1A3A2C00076586 /* BartDeparture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +375,7 @@
 		};
 		54CE028D1D1A040200BEC2A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96D1B95C68D53788B34F1BF6 /* Pods-Simple Bart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Simple Bart/Info.plist";
@@ -263,6 +387,7 @@
 		};
 		54CE028E1D1A040200BEC2A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90F43B9D5B69325122E568D6 /* Pods-Simple Bart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Simple Bart/Info.plist";
@@ -291,6 +416,7 @@
 				54CE028E1D1A040200BEC2A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

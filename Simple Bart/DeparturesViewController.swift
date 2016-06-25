@@ -10,8 +10,14 @@ import UIKit
 
 class DeparturesViewController: UIViewController {
 
+    private let bartApi = BartApi()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        bartApi.getDepartures()
+        //print(bartApi)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
