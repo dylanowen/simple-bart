@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BartResponse {
+public class BartResponse {
     //private static let dateFormatter = NSDateFormatter()
     
     //let date: NSDate?

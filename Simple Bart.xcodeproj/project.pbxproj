@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0666C8F17726010A69434769 /* Pods_Simple_Bart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C86CC8B79F349C9CBBC9292 /* Pods_Simple_Bart.framework */; };
+		543D9D661D1F42270034D3E3 /* ETDCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543D9D651D1F42270034D3E3 /* ETDCell.swift */; };
 		5448195A1D1E60AB003CCCB4 /* BartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544819591D1E60AB003CCCB4 /* BartResponse.swift */; };
+		5448195C1D1F0CF9003CCCB4 /* BartStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5448195B1D1F0CF9003CCCB4 /* BartStation.swift */; };
+		5448195E1D1F2F4C003CCCB4 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5448195D1D1F2F4C003CCCB4 /* StationViewController.swift */; };
+		544819601D1F3AD7003CCCB4 /* StationSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5448195F1D1F3AD7003CCCB4 /* StationSelector.swift */; };
 		54649FAC1D1A407D00771558 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54649FAB1D1A407D00771558 /* HttpClient.swift */; };
 		54CE027C1D1A040200BEC2A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE027B1D1A040200BEC2A5 /* AppDelegate.swift */; };
 		54CE027E1D1A040200BEC2A5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE027D1D1A040200BEC2A5 /* MapViewController.swift */; };
@@ -18,12 +22,16 @@
 		54CE02881D1A040200BEC2A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CE02861D1A040200BEC2A5 /* LaunchScreen.storyboard */; };
 		54D053CC1D1A2A6900076586 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54D053CB1D1A2A6900076586 /* keys.plist */; };
 		54D053D01D1A2ACC00076586 /* BartApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D053CF1D1A2ACC00076586 /* BartApi.swift */; };
-		54D053D31D1A3A2C00076586 /* BartDeparture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D053D21D1A3A2C00076586 /* BartDeparture.swift */; };
+		54D053D31D1A3A2C00076586 /* BartStationDepartures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D053D21D1A3A2C00076586 /* BartStationDepartures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3C86CC8B79F349C9CBBC9292 /* Pods_Simple_Bart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simple_Bart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		543D9D651D1F42270034D3E3 /* ETDCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETDCell.swift; sourceTree = "<group>"; };
 		544819591D1E60AB003CCCB4 /* BartResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartResponse.swift; sourceTree = "<group>"; };
+		5448195B1D1F0CF9003CCCB4 /* BartStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartStation.swift; sourceTree = "<group>"; };
+		5448195D1D1F2F4C003CCCB4 /* StationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
+		5448195F1D1F3AD7003CCCB4 /* StationSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationSelector.swift; sourceTree = "<group>"; };
 		54649FAB1D1A407D00771558 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		54CE02781D1A040200BEC2A5 /* Simple Bart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Bart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54CE027B1D1A040200BEC2A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +45,7 @@
 		54D053CB1D1A2A6900076586 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		54D053CD1D1A2A9900076586 /* keys.example.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.example.plist; sourceTree = "<group>"; };
 		54D053CF1D1A2ACC00076586 /* BartApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartApi.swift; sourceTree = "<group>"; };
-		54D053D21D1A3A2C00076586 /* BartDeparture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartDeparture.swift; sourceTree = "<group>"; };
+		54D053D21D1A3A2C00076586 /* BartStationDepartures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartStationDepartures.swift; sourceTree = "<group>"; };
 		90F43B9D5B69325122E568D6 /* Pods-Simple Bart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Bart.release.xcconfig"; path = "Pods/Target Support Files/Pods-Simple Bart/Pods-Simple Bart.release.xcconfig"; sourceTree = "<group>"; };
 		96D1B95C68D53788B34F1BF6 /* Pods-Simple Bart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Bart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Simple Bart/Pods-Simple Bart.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,8 +82,9 @@
 		544819581D1E6093003CCCB4 /* api */ = {
 			isa = PBXGroup;
 			children = (
-				54D053D21D1A3A2C00076586 /* BartDeparture.swift */,
+				54D053D21D1A3A2C00076586 /* BartStationDepartures.swift */,
 				544819591D1E60AB003CCCB4 /* BartResponse.swift */,
+				5448195B1D1F0CF9003CCCB4 /* BartStation.swift */,
 			);
 			name = api;
 			sourceTree = "<group>";
@@ -120,6 +129,9 @@
 				54CE027B1D1A040200BEC2A5 /* AppDelegate.swift */,
 				54CE027F1D1A040200BEC2A5 /* DeparturesViewController.swift */,
 				54CE027D1D1A040200BEC2A5 /* MapViewController.swift */,
+				5448195D1D1F2F4C003CCCB4 /* StationViewController.swift */,
+				5448195F1D1F3AD7003CCCB4 /* StationSelector.swift */,
+				543D9D651D1F42270034D3E3 /* ETDCell.swift */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -258,13 +270,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5448195E1D1F2F4C003CCCB4 /* StationViewController.swift in Sources */,
+				543D9D661D1F42270034D3E3 /* ETDCell.swift in Sources */,
 				54CE02801D1A040200BEC2A5 /* DeparturesViewController.swift in Sources */,
 				54CE027C1D1A040200BEC2A5 /* AppDelegate.swift in Sources */,
 				54CE027E1D1A040200BEC2A5 /* MapViewController.swift in Sources */,
 				54D053D01D1A2ACC00076586 /* BartApi.swift in Sources */,
 				5448195A1D1E60AB003CCCB4 /* BartResponse.swift in Sources */,
 				54649FAC1D1A407D00771558 /* HttpClient.swift in Sources */,
-				54D053D31D1A3A2C00076586 /* BartDeparture.swift in Sources */,
+				54D053D31D1A3A2C00076586 /* BartStationDepartures.swift in Sources */,
+				5448195C1D1F0CF9003CCCB4 /* BartStation.swift in Sources */,
+				544819601D1F3AD7003CCCB4 /* StationSelector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

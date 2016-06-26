@@ -8,15 +8,31 @@
 
 import UIKit
 
-class DeparturesViewController: UIViewController {
-
-    private let bartApi = BartApi()
+class DeparturesViewController: UIViewController, StationSelector {
+    var station: String? = nil
+    
+    @IBAction func oakDepartures(sender: AnyObject) {
+        self.station = "12th"
+        
+        performSegueWithIdentifier("showStation", sender: self)
+    }
+    
+    @IBAction func sfDepartures(sender: AnyObject) {
+        self.station = "embr"
+        
+        performSegueWithIdentifier("showStation", sender: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
+        bartApi.getDepartures("12th", callback: {response in
+            print(response)
+        })
+        */
+        //test.add
         
-        bartApi.getDepartures()
         //print(bartApi)
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -26,6 +42,11 @@ class DeparturesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let stationController = segue.destinationViewController as? StationViewController {
+            stationController.delegate = self
+        }
+    }
 
 }
 
