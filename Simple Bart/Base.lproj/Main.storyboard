@@ -72,34 +72,46 @@
         <scene sceneID="esd-Sx-lbH">
             <objects>
                 <viewController id="6Xs-Jh-LE0" customClass="StationViewController" customModule="Simple_Bart" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" id="3p2-g8-Atx">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="3p2-g8-Atx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ETDCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="ETDCell" rowHeight="92" id="dBo-vf-tnR" customClass="ETDCell" customModule="Simple_Bart" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="92"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ETDCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="ETDCell" rowHeight="65" id="dBo-vf-tnR" customClass="ETDCell" customModule="Simple_Bart" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dBo-vf-tnR" id="kUr-iJ-V2r">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="91.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mj4-LI-yQh">
-                                            <rect key="frame" x="0.0" y="0.0" width="92" height="92"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="64.5" height="64.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="↑" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpo-tb-VCE">
+                                                    <rect key="frame" x="8" y="8" width="48.5" height="48.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" red="1" green="0.0" blue="0.94702480567678737" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Kpo-tb-VCE" secondAttribute="bottom" constant="8" id="2MY-Hz-JvJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Kpo-tb-VCE" secondAttribute="trailing" constant="8" id="F7k-j0-726"/>
                                                 <constraint firstAttribute="width" secondItem="Mj4-LI-yQh" secondAttribute="height" multiplier="1:1" id="ZMe-OJ-vxg"/>
+                                                <constraint firstItem="Kpo-tb-VCE" firstAttribute="leading" secondItem="Mj4-LI-yQh" secondAttribute="leading" constant="8" id="aeI-Vm-E1t"/>
+                                                <constraint firstItem="Kpo-tb-VCE" firstAttribute="top" secondItem="Mj4-LI-yQh" secondAttribute="top" constant="8" id="jCz-77-ZKh"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvl-xu-52f">
-                                            <rect key="frame" x="99" y="53" width="493" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Station Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4C-C0-CIf">
+                                            <rect key="frame" x="72" y="8" width="520" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Station Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4C-C0-CIf">
-                                            <rect key="frame" x="99" y="14" width="493" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvl-xu-52f">
+                                            <rect key="frame" x="80" y="37" width="520" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -107,18 +119,19 @@
                                     <constraints>
                                         <constraint firstItem="Mj4-LI-yQh" firstAttribute="leading" secondItem="kUr-iJ-V2r" secondAttribute="leading" id="6Jq-3S-ejl"/>
                                         <constraint firstItem="Mj4-LI-yQh" firstAttribute="top" secondItem="kUr-iJ-V2r" secondAttribute="top" id="dCQ-KW-USh"/>
-                                        <constraint firstItem="Yvl-xu-52f" firstAttribute="leading" secondItem="O4C-C0-CIf" secondAttribute="leading" id="dCg-Vh-aXm"/>
-                                        <constraint firstItem="Yvl-xu-52f" firstAttribute="top" secondItem="O4C-C0-CIf" secondAttribute="bottom" constant="18" id="etL-SN-J2e"/>
+                                        <constraint firstItem="Yvl-xu-52f" firstAttribute="leading" secondItem="O4C-C0-CIf" secondAttribute="leading" constant="8" id="dCg-Vh-aXm"/>
+                                        <constraint firstItem="Yvl-xu-52f" firstAttribute="top" secondItem="O4C-C0-CIf" secondAttribute="bottom" constant="8" id="etL-SN-J2e"/>
                                         <constraint firstItem="Yvl-xu-52f" firstAttribute="width" secondItem="O4C-C0-CIf" secondAttribute="width" id="gcR-ug-4MI"/>
                                         <constraint firstItem="O4C-C0-CIf" firstAttribute="leading" secondItem="Mj4-LI-yQh" secondAttribute="trailing" constant="7.5" id="m5j-j7-WLu"/>
                                         <constraint firstAttribute="bottom" secondItem="Mj4-LI-yQh" secondAttribute="bottom" id="qtc-eu-Cgy"/>
-                                        <constraint firstItem="O4C-C0-CIf" firstAttribute="centerY" secondItem="Mj4-LI-yQh" secondAttribute="centerY" constant="-21.25" id="um4-0B-K9k"/>
+                                        <constraint firstItem="O4C-C0-CIf" firstAttribute="centerY" secondItem="Mj4-LI-yQh" secondAttribute="centerY" constant="-13.75" id="um4-0B-K9k"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="O4C-C0-CIf" secondAttribute="trailing" id="zsz-Dh-D9h"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="colorBox" destination="Mj4-LI-yQh" id="aI0-Wi-bUw"/>
                                     <outlet property="departuresLabel" destination="Yvl-xu-52f" id="BEz-ZD-UiU"/>
+                                    <outlet property="directionLabel" destination="Kpo-tb-VCE" id="BCD-Fm-SI6"/>
                                     <outlet property="stationLabel" destination="O4C-C0-CIf" id="OAd-hp-2q2"/>
                                 </connections>
                             </tableViewCell>

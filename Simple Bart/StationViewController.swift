@@ -9,46 +9,62 @@
 import UIKit
 
 class StationViewController: UITableViewController {
+    private static let dateFormatter = {
+        () -> NSDateFormatter in
+        let formatter = NSDateFormatter()
+        //expected date format: 06/25/2016 01:14:33 AM PDT
+        formatter.dateFormat = "h:mm:ss a"
+        
+        return formatter;
+    }()
+    
     @IBOutlet weak var navigationLabel: UINavigationItem!
     
     var delegate: StationSelector?
     var stationId: String = ""
     
     var etds: [BartStationDepartures.ETD] = []
+
+    /*
+    override init(style: UITableViewStyle) {
+        super.init(style: style)
+        
+     
+    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.refreshControl = UIRefreshControl()
+    }
+    */
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
         self.refreshControl = UIRefreshControl()
         
         self.refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshControl?.addTarget(self, action: #selector(refresh), forControlEvents: UIControlEvents.ValueChanged)
         
-        tableView.addSubview(refreshControl!)
-        
         if self.delegate?.station != nil {
             self.stationId = self.delegate!.station!
             //
             self.navigationLabel.title = self.stationId
             
-            downloadStation()
+            //TODO fix this, it shouldn't be there everytime
+            refresh(self)
         }
         else {
             //show error
         }
-        
-        
-        //print(bartApi)
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     func refresh(sender:AnyObject)
     {
-        // Updating your data here...
+        self.refreshControl?.beginRefreshing()
         
         downloadStation()
-        
-        refreshControl?.endRefreshing()
     }
     
     func downloadStation() {
@@ -58,6 +74,9 @@ class StationViewController: UITableViewController {
                 self.etds = departures.etds
                 
                 self.tableView.reloadData()
+                
+                self.refreshControl?.attributedTitle = NSAttributedString(string: "Refreshed: " + StationViewController.dateFormatter.stringFromDate(departures.dateTime))
+                self.refreshControl?.endRefreshing()
             }
         })
     }
@@ -83,45 +102,23 @@ class StationViewController: UITableViewController {
         // Fetches the appropriate meal for the data source layout.
         let etd = etds[indexPath.row]
         
-        cell.colorBox.backgroundColor = UIColor(hex: etd.hexColor)
+        cell.setColor(etd.hexColor)
+        cell.setDirection(etd.direction)
         cell.stationLabel.text = etd.name
         
+        let departures = etd.estimates.map({ $0.time })
+        cell.setDepartures(departures)
+        
+        /*
         var departures = "Departures:"
         for estimate in etd.estimates {
             departures += " \(estimate.minutes)m"
         }
+ */
         
-        cell.departuresLabel.text = departures
+        //cell.departuresLabel.text = departures
         
         return cell
     }
 }
 
-//copied from ttp://stackoverflow.com/questions/24263007/how-to-use-hex-colour-values-in-swift-ios
-extension UIColor {
-    
-    convenience init(hex: String) {
-        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
-        
-        if (cString.hasPrefix("#")) {
-            cString = cString.substringFromIndex(cString.startIndex.advancedBy(1))
-        }
-        
-        if ((cString.characters.count) != 6) {
-            self.init(red: 255, green: 0, blue: 255, alpha: 1)
-        }
-        else {
-            var rgbValue:UInt32 = 0
-            NSScanner(string: cString).scanHexInt(&rgbValue)
-            
-            let components = (
-                R: CGFloat((rgbValue >> 16) & 0xff) / 255,
-                G: CGFloat((rgbValue >> 08) & 0xff) / 255,
-                B: CGFloat((rgbValue >> 00) & 0xff) / 255
-            )
-            
-            self.init(red: components.R, green: components.G, blue: components.B, alpha: 1)
-        }
-    }
-    
-}

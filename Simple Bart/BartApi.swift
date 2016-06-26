@@ -93,7 +93,6 @@ class BartApi {
             (abbr: "WCRK", name: "Walnut Creek"),
             (abbr: "WDUB", name: "West Dublin/Pleasanton"),
             (abbr: "WOAK", name: "West Oakland"),
-
         ]
     }
 }
