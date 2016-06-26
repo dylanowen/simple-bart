@@ -19,6 +19,13 @@ class StationViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.refreshControl = UIRefreshControl()
+        
+        self.refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl?.addTarget(self, action: #selector(refresh), forControlEvents: UIControlEvents.ValueChanged)
+        
+        tableView.addSubview(refreshControl!)
+        
         if self.delegate?.station != nil {
             self.stationId = self.delegate!.station!
             //
@@ -33,6 +40,15 @@ class StationViewController: UITableViewController {
         
         //print(bartApi)
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func refresh(sender:AnyObject)
+    {
+        // Updating your data here...
+        
+        downloadStation()
+        
+        refreshControl?.endRefreshing()
     }
     
     func downloadStation() {
@@ -51,8 +67,6 @@ class StationViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }

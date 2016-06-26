@@ -10,7 +10,7 @@ import Foundation
 
 import AEXML
 
-public class BartStationDepartures: BartResponse, ResponseXMLSerializable {
+public class BartStationDepartures: AbstractBartStation, ResponseXMLSerializable {
     private static let dateFormatter = {
         () -> NSDateFormatter in
             let formatter = NSDateFormatter()
@@ -25,10 +25,6 @@ public class BartStationDepartures: BartResponse, ResponseXMLSerializable {
     let timeString: String
     let dateTime: NSDate
     
-    //station
-    let name: String
-    let abbr: String
-    
     var etds: [ETD] = [ETD]()
     
     required public init(response: NSHTTPURLResponse, representation: AEXMLDocument) {
@@ -42,8 +38,7 @@ public class BartStationDepartures: BartResponse, ResponseXMLSerializable {
         self.dateTime = BartStationDepartures.dateFormatter.dateFromString(self.dateString + " " + self.timeString) ?? NSDate()
         
         let station = root["station"]
-        self.name = station["name"].stringValue
-        self.abbr = station["abbr"].stringValue
+        super.init(representation: station)
         
         if let etds = station["etd"].all {
             for etdElement in etds {
@@ -51,7 +46,7 @@ public class BartStationDepartures: BartResponse, ResponseXMLSerializable {
             }
         }
         
-        print(self.dateTime)
+        //print(self.dateTime)
     }
 
     //TODO is this a good idea?
@@ -89,7 +84,7 @@ public class BartStationDepartures: BartResponse, ResponseXMLSerializable {
             
             let minutes: Int
             let platform: Int
-            let direction: String
+            let direction: Direction
             let length: Int
             
             let bikeFlag: Bool
@@ -97,7 +92,7 @@ public class BartStationDepartures: BartResponse, ResponseXMLSerializable {
             init(representation: AEXMLElement) {
                 self.minutes = representation["minutes"].intValue
                 self.platform = representation["platform"].intValue
-                self.direction = representation["direction"].stringValue
+                self.direction = Direction(rawValue: representation["direction"].stringValue.lowercaseString)!
                 self.length = representation["length"].intValue
                 self.bikeFlag = representation["bikeFlag"].boolValue
             }

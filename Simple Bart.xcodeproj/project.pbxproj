@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0666C8F17726010A69434769 /* Pods_Simple_Bart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C86CC8B79F349C9CBBC9292 /* Pods_Simple_Bart.framework */; };
+		54342C011D1F6D42001E1B5D /* BartStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54342C001D1F6D42001E1B5D /* BartStation.swift */; };
+		54342C031D1F6E8A001E1B5D /* AllBartStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54342C021D1F6E8A001E1B5D /* AllBartStations.swift */; };
+		54342C051D1F8495001E1B5D /* StationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54342C041D1F8495001E1B5D /* StationCell.swift */; };
+		54342C081D1FC14E001E1B5D /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54342C071D1FC14E001E1B5D /* Direction.swift */; };
 		543D9D661D1F42270034D3E3 /* ETDCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543D9D651D1F42270034D3E3 /* ETDCell.swift */; };
-		5448195A1D1E60AB003CCCB4 /* BartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544819591D1E60AB003CCCB4 /* BartResponse.swift */; };
-		5448195C1D1F0CF9003CCCB4 /* BartStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5448195B1D1F0CF9003CCCB4 /* BartStation.swift */; };
+		5448195C1D1F0CF9003CCCB4 /* AbstractBartStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5448195B1D1F0CF9003CCCB4 /* AbstractBartStation.swift */; };
 		5448195E1D1F2F4C003CCCB4 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5448195D1D1F2F4C003CCCB4 /* StationViewController.swift */; };
 		544819601D1F3AD7003CCCB4 /* StationSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5448195F1D1F3AD7003CCCB4 /* StationSelector.swift */; };
 		54649FAC1D1A407D00771558 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54649FAB1D1A407D00771558 /* HttpClient.swift */; };
@@ -27,9 +30,12 @@
 
 /* Begin PBXFileReference section */
 		3C86CC8B79F349C9CBBC9292 /* Pods_Simple_Bart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simple_Bart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54342C001D1F6D42001E1B5D /* BartStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartStation.swift; sourceTree = "<group>"; };
+		54342C021D1F6E8A001E1B5D /* AllBartStations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllBartStations.swift; sourceTree = "<group>"; };
+		54342C041D1F8495001E1B5D /* StationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationCell.swift; sourceTree = "<group>"; };
+		54342C071D1FC14E001E1B5D /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		543D9D651D1F42270034D3E3 /* ETDCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETDCell.swift; sourceTree = "<group>"; };
-		544819591D1E60AB003CCCB4 /* BartResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartResponse.swift; sourceTree = "<group>"; };
-		5448195B1D1F0CF9003CCCB4 /* BartStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartStation.swift; sourceTree = "<group>"; };
+		5448195B1D1F0CF9003CCCB4 /* AbstractBartStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractBartStation.swift; sourceTree = "<group>"; };
 		5448195D1D1F2F4C003CCCB4 /* StationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
 		5448195F1D1F3AD7003CCCB4 /* StationSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationSelector.swift; sourceTree = "<group>"; };
 		54649FAB1D1A407D00771558 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
@@ -83,8 +89,10 @@
 			isa = PBXGroup;
 			children = (
 				54D053D21D1A3A2C00076586 /* BartStationDepartures.swift */,
-				544819591D1E60AB003CCCB4 /* BartResponse.swift */,
-				5448195B1D1F0CF9003CCCB4 /* BartStation.swift */,
+				5448195B1D1F0CF9003CCCB4 /* AbstractBartStation.swift */,
+				54342C001D1F6D42001E1B5D /* BartStation.swift */,
+				54342C021D1F6E8A001E1B5D /* AllBartStations.swift */,
+				54342C071D1FC14E001E1B5D /* Direction.swift */,
 			);
 			name = api;
 			sourceTree = "<group>";
@@ -132,6 +140,7 @@
 				5448195D1D1F2F4C003CCCB4 /* StationViewController.swift */,
 				5448195F1D1F3AD7003CCCB4 /* StationSelector.swift */,
 				543D9D651D1F42270034D3E3 /* ETDCell.swift */,
+				54342C041D1F8495001E1B5D /* StationCell.swift */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -273,13 +282,16 @@
 				5448195E1D1F2F4C003CCCB4 /* StationViewController.swift in Sources */,
 				543D9D661D1F42270034D3E3 /* ETDCell.swift in Sources */,
 				54CE02801D1A040200BEC2A5 /* DeparturesViewController.swift in Sources */,
+				54342C011D1F6D42001E1B5D /* BartStation.swift in Sources */,
 				54CE027C1D1A040200BEC2A5 /* AppDelegate.swift in Sources */,
 				54CE027E1D1A040200BEC2A5 /* MapViewController.swift in Sources */,
 				54D053D01D1A2ACC00076586 /* BartApi.swift in Sources */,
-				5448195A1D1E60AB003CCCB4 /* BartResponse.swift in Sources */,
+				54342C081D1FC14E001E1B5D /* Direction.swift in Sources */,
+				54342C031D1F6E8A001E1B5D /* AllBartStations.swift in Sources */,
+				54342C051D1F8495001E1B5D /* StationCell.swift in Sources */,
 				54649FAC1D1A407D00771558 /* HttpClient.swift in Sources */,
 				54D053D31D1A3A2C00076586 /* BartStationDepartures.swift in Sources */,
-				5448195C1D1F0CF9003CCCB4 /* BartStation.swift in Sources */,
+				5448195C1D1F0CF9003CCCB4 /* AbstractBartStation.swift in Sources */,
 				544819601D1F3AD7003CCCB4 /* StationSelector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

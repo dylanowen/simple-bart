@@ -9,6 +9,7 @@
 import UIKit
 
 class ETDCell: UITableViewCell {
+    
    
     @IBOutlet weak var colorBox: UIView!
     @IBOutlet weak var stationLabel: UILabel!
@@ -24,5 +25,7 @@ class ETDCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
+    
+    
     
 }
