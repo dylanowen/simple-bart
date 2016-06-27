@@ -16,6 +16,7 @@
 		5448195C1D1F0CF9003CCCB4 /* AbstractBartStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5448195B1D1F0CF9003CCCB4 /* AbstractBartStation.swift */; };
 		5448195E1D1F2F4C003CCCB4 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5448195D1D1F2F4C003CCCB4 /* StationViewController.swift */; };
 		544819601D1F3AD7003CCCB4 /* StationSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5448195F1D1F3AD7003CCCB4 /* StationSelector.swift */; };
+		544E281D1D20B19500E2873C /* SolarizedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544E281C1D20B19500E2873C /* SolarizedColor.swift */; };
 		54649FAC1D1A407D00771558 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54649FAB1D1A407D00771558 /* HttpClient.swift */; };
 		54CE027C1D1A040200BEC2A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE027B1D1A040200BEC2A5 /* AppDelegate.swift */; };
 		54CE027E1D1A040200BEC2A5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE027D1D1A040200BEC2A5 /* MapViewController.swift */; };
@@ -38,6 +39,7 @@
 		5448195B1D1F0CF9003CCCB4 /* AbstractBartStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractBartStation.swift; sourceTree = "<group>"; };
 		5448195D1D1F2F4C003CCCB4 /* StationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
 		5448195F1D1F3AD7003CCCB4 /* StationSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationSelector.swift; sourceTree = "<group>"; };
+		544E281C1D20B19500E2873C /* SolarizedColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolarizedColor.swift; sourceTree = "<group>"; };
 		54649FAB1D1A407D00771558 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		54CE02781D1A040200BEC2A5 /* Simple Bart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Bart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54CE027B1D1A040200BEC2A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				5448195F1D1F3AD7003CCCB4 /* StationSelector.swift */,
 				543D9D651D1F42270034D3E3 /* ETDCell.swift */,
 				54342C041D1F8495001E1B5D /* StationCell.swift */,
+				544E281C1D20B19500E2873C /* SolarizedColor.swift */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				54D053D31D1A3A2C00076586 /* BartStationDepartures.swift in Sources */,
 				5448195C1D1F0CF9003CCCB4 /* AbstractBartStation.swift in Sources */,
 				544819601D1F3AD7003CCCB4 /* StationSelector.swift in Sources */,
+				544E281D1D20B19500E2873C /* SolarizedColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

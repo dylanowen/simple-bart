@@ -45,6 +45,7 @@ class StationViewController: UITableViewController {
         self.refreshControl = UIRefreshControl()
         
         self.refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl?.tintColor = UIColor(hex: "#ffffff")
         self.refreshControl?.addTarget(self, action: #selector(refresh), forControlEvents: UIControlEvents.ValueChanged)
         
         if self.delegate?.station != nil {
@@ -102,7 +103,7 @@ class StationViewController: UITableViewController {
         // Fetches the appropriate meal for the data source layout.
         let etd = etds[indexPath.row]
         
-        cell.setColor(etd.hexColor)
+        cell.setColor(etd.color)
         cell.setDirection(etd.direction)
         cell.stationLabel.text = etd.name
         

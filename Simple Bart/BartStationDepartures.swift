@@ -60,8 +60,8 @@ public class BartStationDepartures: AbstractBartStation, ResponseXMLSerializable
         //station
         let name: String
         let abbr: String
-        let color: String
         let hexColor: String
+        let color: UIColor
         let direction: Direction
         
         var estimates: [Estimate] = [Estimate]()
@@ -71,8 +71,8 @@ public class BartStationDepartures: AbstractBartStation, ResponseXMLSerializable
             self.abbr = representation["abbreviation"].stringValue
             
             if let estimates = representation["estimate"].all {
-                self.color = estimates[0]["color"].stringValue
                 self.hexColor = estimates[0]["hexcolor"].stringValue
+                
                 self.direction = Direction(rawValue: estimates[0]["direction"].stringValue.lowercaseString)!
                 
                 for estimateElement in estimates {
@@ -85,10 +85,11 @@ public class BartStationDepartures: AbstractBartStation, ResponseXMLSerializable
                 self.estimates = self.estimates.sort({ $0.minutes < $1.minutes })
             }
             else {
-                self.color = "PINK"
-                self.hexColor = "#ff00ff"
+                self.hexColor = "#000000"
                 self.direction = .North
             }
+            
+            self.color = UIColor(hex: self.hexColor)
         }
         
         public class Estimate {
