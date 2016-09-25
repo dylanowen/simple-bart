@@ -10,10 +10,10 @@ import Foundation
 
 import AEXML
 
-public class BartStationDepartures: AbstractBartStation, ResponseXMLSerializable {
-    private static let dateFormatter = {
-        () -> NSDateFormatter in
-            let formatter = NSDateFormatter()
+open class BartStationDepartures: AbstractBartStation, ResponseXMLSerializable {
+    fileprivate static let dateFormatter = {
+        () -> DateFormatter in
+            let formatter = DateFormatter()
             //expected date format: 06/25/2016 01:14:33 AM PDT
             formatter.dateFormat = "MM/dd/yyyy hh:mm:ss a zzz"
             
@@ -23,19 +23,19 @@ public class BartStationDepartures: AbstractBartStation, ResponseXMLSerializable
     //datetime
     let dateString: String
     let timeString: String
-    let dateTime: NSDate
+    let dateTime: Date
     
     var etds: [ETD] = [ETD]()
     
-    required public init(response: NSHTTPURLResponse, representation: AEXMLDocument) {
+    required public init(response: HTTPURLResponse, representation: AEXMLDocument) {
         //print(representation)
         
         let root = representation.root;
         
         //capture the date time and parse the value
-        self.dateString = root["date"].stringValue
-        self.timeString = root["time"].stringValue
-        self.dateTime = BartStationDepartures.dateFormatter.dateFromString(self.dateString + " " + self.timeString) ?? NSDate()
+        self.dateString = root["date"].string
+        self.timeString = root["time"].string
+        self.dateTime = BartStationDepartures.dateFormatter.date(from: self.dateString + " " + self.timeString) ?? Date()
         
         let station = root["station"]
         super.init(representation: station)
@@ -46,7 +46,7 @@ public class BartStationDepartures: AbstractBartStation, ResponseXMLSerializable
             }
             
             //filter out missing estimates and sort
-            self.etds = self.etds.filter({ $0.estimates.count > 0 }).sort({
+            self.etds = self.etds.filter({ $0.estimates.count > 0 }).sorted(by: {
                 $0.estimates[0].minutes < $1.estimates[0].minutes
             })
         }
@@ -55,7 +55,7 @@ public class BartStationDepartures: AbstractBartStation, ResponseXMLSerializable
     }
 
     //TODO is this a good idea?
-    public class ETD {
+    open class ETD {
      
         //station
         let name: String
@@ -66,14 +66,14 @@ public class BartStationDepartures: AbstractBartStation, ResponseXMLSerializable
         
         var estimates: [Estimate] = [Estimate]()
         
-        init(representation: AEXMLElement, currentTime: NSDate) {
-            self.name = representation["destination"].stringValue
-            self.abbr = representation["abbreviation"].stringValue
+        init(representation: AEXMLElement, currentTime: Date) {
+            self.name = representation["destination"].string
+            self.abbr = representation["abbreviation"].string
             
             if let estimates = representation["estimate"].all {
-                self.hexColor = estimates[0]["hexcolor"].stringValue
+                self.hexColor = estimates[0]["hexcolor"].string
                 
-                self.direction = Direction(rawValue: estimates[0]["direction"].stringValue.lowercaseString)!
+                self.direction = Direction(rawValue: estimates[0]["direction"].string.lowercased())!
                 
                 for estimateElement in estimates {
                     //TODO make this better
@@ -82,7 +82,7 @@ public class BartStationDepartures: AbstractBartStation, ResponseXMLSerializable
                 }
                 
                 //sort the results
-                self.estimates = self.estimates.sort({ $0.minutes < $1.minutes })
+                self.estimates = self.estimates.sorted(by: { $0.minutes < $1.minutes })
             }
             else {
                 self.hexColor = "#000000"
@@ -92,21 +92,21 @@ public class BartStationDepartures: AbstractBartStation, ResponseXMLSerializable
             self.color = UIColor(hex: self.hexColor)
         }
         
-        public class Estimate {
+        open class Estimate {
             
             let minutes: Int
-            let time: NSDate
+            let time: Date
             let platform: Int
             let length: Int
             
             let bikeFlag: Bool
             
-            init(representation: AEXMLElement, currentTime: NSDate) {
-                self.minutes = representation["minutes"].intValue
-                self.time = currentTime.dateByAddingTimeInterval(Double(self.minutes) * 60)
-                self.platform = representation["platform"].intValue
-                self.length = representation["length"].intValue
-                self.bikeFlag = representation["bikeFlag"].boolValue
+            init(representation: AEXMLElement, currentTime: Date) {
+                self.minutes = representation["minutes"].int
+                self.time = currentTime.addingTimeInterval(Double(self.minutes) * 60)
+                self.platform = representation["platform"].int
+                self.length = representation["length"].int
+                self.bikeFlag = representation["bikeFlag"].bool
             }
         }
     }

@@ -11,39 +11,39 @@ import Foundation
 import Alamofire
 
 class BartApi {
-    static let userDefaults = NSUserDefaults.standardUserDefaults()
+    static let userDefaults = UserDefaults.standard
     static let get = BartApi()
     
-    private static let key = { () -> String in
-        let path = NSBundle.mainBundle().pathForResource("keys", ofType: "plist")!
+    fileprivate static let key = { () -> String in
+        let path = Bundle.main.path(forResource: "keys", ofType: "plist")!
         let keysConfig = NSDictionary(contentsOfFile: path)!
         
         return keysConfig["BART_API_KEY"] as! String
     }()
     
-    private init() {
+    fileprivate init() {
         print("Using key: " + BartApi.key)
     }
     
-    func getStations(cached: Bool = true, callback: Response<AllBartStations, BackendError> -> Void) {
+    func getStations(_ cached: Bool = true, callback: (DataResponse<AllBartStations>) -> Void) {
         let request = buildRequest("stn", parameters: ["cmd": "stns"])
         
         request.responseObject(callback)
     }
     
-    func getDepartures(origin: String, callback: Response<BartStationDepartures, BackendError> -> Void) {
+    func getDepartures(_ origin: String, callback: @escaping (DataResponse<BartStationDepartures>) -> Void) {
         //ttp://api.bart.gov/api/etd.aspx?cmd=etd&orig=12th&key=MW9S-E7SL-26DU-VV8V
         let request = buildRequest("etd", parameters: ["cmd": "etd", "orig": origin])
         
         request.responseObject(callback)
     }
     
-    
-    private func buildRequest(path: String, parameters: [String: String] = [:]) -> Request  {
+
+    fileprivate func buildRequest(_ path: String, parameters: [String: String] = [:]) -> DataRequest  {
         var finalParms = parameters
         finalParms["key"] = BartApi.key
         
-        return Alamofire.request(.GET, "https://api.bart.gov/api/" + path + ".aspx", parameters: finalParms)
+        return Alamofire.request("https://api.bart.gov/api/" + path + ".aspx", parameters: finalParms)
     }
     
     func getDefaultStations() -> [(abbr: String, name: String)] {

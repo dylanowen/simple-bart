@@ -11,68 +11,70 @@ import Foundation
 import Alamofire
 import AEXML
 
-public enum BackendError: ErrorType {
-    case Network(error: NSError)
-    case DataSerialization(reason: String)
-    case ObjectSerialization(reason: String)
-    case XMLSerialization(error: NSError)
-    case ApiError(text: String, details: String)
+public enum BackendError: Error {
+    case network(error: Error)
+    case dataSerialization(reason: String)
+    case objectSerialization(reason: String)
+    case xmlSerialization(error: Error)
+    case apiError(text: String, details: String)
 }
 
-extension Request {
-    public static func XMLResponseSerializer() -> ResponseSerializer<AEXMLDocument, BackendError> {
-        return ResponseSerializer { request, response, data, error in
-            guard error == nil else { return .Failure(.Network(error: error!)) }
+extension DataRequest {
+    public static func XMLResponseSerializer() -> DataResponseSerializer<AEXMLDocument> {
+        return DataResponseSerializer { request, response, data, error in
+            guard error == nil else { return .failure(BackendError.network(error: error!)) }
             
             guard let validData = data else {
-                return .Failure(.DataSerialization(reason: "Data could not be serialized. Input data was nil."))
+                return .failure(BackendError.dataSerialization(reason: "Data could not be serialized. Input data was nil."))
             }
             
             do {
-                let XML = try AEXMLDocument(xmlData: validData)
-                return .Success(XML)
+                let XML = try AEXMLDocument(xml: validData)
+                return .success(XML)
             } catch {
-                return .Failure(.XMLSerialization(error: error as NSError))
+                return .failure(BackendError.xmlSerialization(error: error))
             }
         }
     }
-    
-    public func responseXMLDocument(completionHandler: Response<AEXMLDocument, BackendError> -> Void) -> Self {
-        return response(responseSerializer: Request.XMLResponseSerializer(), completionHandler: completionHandler)
+
+    @discardableResult
+    public func responseXMLDocument(_ completionHandler: @escaping (DataResponse<AEXMLDocument>) -> Void) -> Self {
+        return .response(queue: nil, responseSerializer: DataRequest.XMLResponseSerializer(), completionHandler: completionHandler)
     }
 }
 
 public protocol ResponseXMLSerializable {
-    init?(response: NSHTTPURLResponse, representation: AEXMLDocument)
+    init?(response: HTTPURLResponse, representation: AEXMLDocument)
 }
 
-extension Request {
-    public func responseObject<T: ResponseXMLSerializable>(completionHandler: Response<T, BackendError> -> Void) -> Self {
-        let responseSerializer = ResponseSerializer<T, BackendError> { request, response, data, error in
-            guard error == nil else { return .Failure(.Network(error: error!)) }
+extension DataRequest {
+    @discardableResult
+    public func responseObject<T: ResponseXMLSerializable>(_ completionHandler: @escaping (DataResponse<T>) -> Void) -> Self {
+        let responseSerializer = DataResponseSerializer<T> { request, response, data, error in
+            guard error == nil else { return .failure(BackendError.network(error: error!)) }
             
-            let xmlResponseSerializer = Request.XMLResponseSerializer()
+            let xmlResponseSerializer = DataRequest.XMLResponseSerializer()
             let result = xmlResponseSerializer.serializeResponse(request, response, data, error)
             
             switch result {
-            case .Success(let value):
+            case .success(let value):
                 //test for a bart api error
                 let errorElement = value.root["message"]["error"]
                 if (errorElement.error == nil) {
-                    return .Failure(.ApiError(text: errorElement["text"].stringValue, details: errorElement["details"].stringValue))
+                    return .failure(BackendError.apiError(text: errorElement["text"].string, details: errorElement["details"].string))
                 }
                 
-                if let response = response, responseObject = T(response: response, representation: value)
+                if let response = response, let responseObject = T(response: response, representation: value)
                 {
-                    return .Success(responseObject)
+                    return .success(responseObject)
                 } else {
-                    return .Failure(.ObjectSerialization(reason: "XML could not be serialized into response object: \(value)"))
+                    return .failure(BackendError.objectSerialization(reason: "XML could not be serialized into response object: \(value)"))
                 }
-            case .Failure(let error):
-                return .Failure(error)
+            case .failure(let error):
+                return .failure(error)
             }
         }
-        
-        return response(responseSerializer: responseSerializer, completionHandler: completionHandler)
+
+        return .response(responseSerializer: responseSerializer, completionHandler: completionHandler)
     }
 }

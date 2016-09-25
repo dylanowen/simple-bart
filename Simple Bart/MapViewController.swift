@@ -68,7 +68,7 @@ class MapViewController: UIViewController, UIScrollViewDelegate {
     //func scrollViewDidZoom(scrollView: UIScrollView) {
     //}
     
-    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return mapView
     }
 

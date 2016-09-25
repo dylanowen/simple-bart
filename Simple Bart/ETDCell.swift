@@ -9,14 +9,14 @@
 import UIKit
 
 class ETDCell: UITableViewCell {
-    private static let dateFormatter = {
-        () -> NSDateFormatter in
-        let formatter = NSDateFormatter()
+    fileprivate static let dateFormatter = {
+        () -> DateFormatter in
+        let formatter = DateFormatter()
         
         //expected date format: 06/25/2016 01:14:33 AM PDT
         formatter.dateFormat = "h:mma"
-        formatter.AMSymbol = "a"
-        formatter.PMSymbol = "p"
+        formatter.amSymbol = "a"
+        formatter.pmSymbol = "p"
         
         return formatter;
     }()
@@ -31,18 +31,18 @@ class ETDCell: UITableViewCell {
         // Initialization code
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
     }
     
-    func setColor(color: UIColor) {
+    func setColor(_ color: UIColor) {
         //self.colorBox.backgroundColor = UIColor(hex: "#000000")
         self.directionLabel.textColor = color
     }
     
-    func setDirection(direction: Direction) {
+    func setDirection(_ direction: Direction) {
         let arrow: String
         switch direction {
         case .North:
@@ -62,10 +62,10 @@ class ETDCell: UITableViewCell {
         self.directionLabel.text = arrow
     }
     
-    func setDepartures(departures: [NSDate]) {
+    func setDepartures(_ departures: [Date]) {
         var departureString = ""
         for estimate in departures {
-            departureString += "\(ETDCell.dateFormatter.stringFromDate(estimate))   "
+            departureString += "\(ETDCell.dateFormatter.string(from: estimate))   "
         }
         
         self.departuresLabel.text = departureString

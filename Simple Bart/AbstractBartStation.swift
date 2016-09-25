@@ -10,13 +10,13 @@ import Foundation
 
 import AEXML
 
-public class AbstractBartStation {
+open class AbstractBartStation {
     //station
     let name: String
     let abbr: String
     
     init(representation: AEXMLElement) {
-        self.name = representation["name"].stringValue
-        self.abbr = representation["abbr"].stringValue
+        self.name = representation["name"].string
+        self.abbr = representation["abbr"].string
     }
 }

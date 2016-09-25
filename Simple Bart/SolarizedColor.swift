@@ -13,7 +13,7 @@ struct SolarizedColor {
     let hexCode: String
     let color: UIColor
     
-    private init(_ rawValue:String, _ hexCode:String) {
+    fileprivate init(_ rawValue:String, _ hexCode:String) {
         self.rawValue = rawValue
         self.hexCode = hexCode
         self.color = UIColor(hex: hexCode)
@@ -32,8 +32,8 @@ extension SolarizedColor {
     static let Default = SolarizedColor("", "#000000")
     static let allColors = [Red, Orange, Yellow, Green, Blue, Magenta, Violet, Cyan]
     
-    static func getColor(colorName: String) -> SolarizedColor {
-        let normalizedName = colorName.lowercaseString
+    static func getColor(_ colorName: String) -> SolarizedColor {
+        let normalizedName = colorName.lowercased()
         
         for color in allColors {
             if (color.rawValue == normalizedName) {
@@ -49,10 +49,11 @@ extension SolarizedColor {
 extension UIColor {
     
     convenience init(hex: String) {
-        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
+
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         
         if (cString.hasPrefix("#")) {
-            cString = cString.substringFromIndex(cString.startIndex.advancedBy(1))
+            cString = cString.substring(from: cString.characters.index(cString.startIndex, offsetBy: 1))
         }
         
         if ((cString.characters.count) != 6) {
@@ -60,7 +61,7 @@ extension UIColor {
         }
         else {
             var rgbValue:UInt32 = 0
-            NSScanner(string: cString).scanHexInt(&rgbValue)
+            Scanner(string: cString).scanHexInt32(&rgbValue)
             
             let components = (
                 R: CGFloat((rgbValue >> 16) & 0xff) / 255,

@@ -10,11 +10,11 @@ import Foundation
 
 import AEXML
 
-public class AllBartStations: ResponseXMLSerializable {
+open class AllBartStations: ResponseXMLSerializable {
 
     var stations: [BartStation] = [BartStation]()
     
-    required public init(response: NSHTTPURLResponse, representation: AEXMLDocument) {
+    required public init(response: HTTPURLResponse, representation: AEXMLDocument) {
         //print(representation)
         
         let root = representation.root;

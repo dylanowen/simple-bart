@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0666C8F17726010A69434769 /* Pods_Simple_Bart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C86CC8B79F349C9CBBC9292 /* Pods_Simple_Bart.framework */; };
+		4800EEA31D984B8A00F0E48B /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54D053CB1D1A2A6900076586 /* keys.plist */; };
 		54342C011D1F6D42001E1B5D /* BartStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54342C001D1F6D42001E1B5D /* BartStation.swift */; };
 		54342C031D1F6E8A001E1B5D /* AllBartStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54342C021D1F6E8A001E1B5D /* AllBartStations.swift */; };
 		54342C051D1F8495001E1B5D /* StationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54342C041D1F8495001E1B5D /* StationCell.swift */; };
@@ -24,7 +25,6 @@
 		54CE02831D1A040200BEC2A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CE02811D1A040200BEC2A5 /* Main.storyboard */; };
 		54CE02851D1A040200BEC2A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54CE02841D1A040200BEC2A5 /* Assets.xcassets */; };
 		54CE02881D1A040200BEC2A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CE02861D1A040200BEC2A5 /* LaunchScreen.storyboard */; };
-		54D053CC1D1A2A6900076586 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54D053CB1D1A2A6900076586 /* keys.plist */; };
 		54D053D01D1A2ACC00076586 /* BartApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D053CF1D1A2ACC00076586 /* BartApi.swift */; };
 		54D053D31D1A3A2C00076586 /* BartStationDepartures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D053D21D1A3A2C00076586 /* BartStationDepartures.swift */; };
 /* End PBXBuildFile section */
@@ -188,12 +188,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Dylan Owen";
 				TargetAttributes = {
 					54CE02771D1A040200BEC2A5 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = ZXDMRALBK7;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -220,7 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54D053CC1D1A2A6900076586 /* keys.plist in Resources */,
+				4800EEA31D984B8A00F0E48B /* keys.plist in Resources */,
 				54CE02881D1A040200BEC2A5 /* LaunchScreen.storyboard in Resources */,
 				54CE02851D1A040200BEC2A5 /* Assets.xcassets in Resources */,
 				54CE02831D1A040200BEC2A5 /* Main.storyboard in Resources */,
@@ -336,8 +337,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -359,7 +362,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -381,8 +384,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -398,9 +403,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -409,11 +415,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 96D1B95C68D53788B34F1BF6 /* Pods-Simple Bart.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Simple Bart/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dylowen.Simple-Bart";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -421,11 +429,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 90F43B9D5B69325122E568D6 /* Pods-Simple Bart.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Simple Bart/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dylowen.Simple-Bart";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

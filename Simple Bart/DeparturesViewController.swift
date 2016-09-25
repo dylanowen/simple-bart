@@ -34,33 +34,33 @@ class DeparturesViewController: UITableViewController, StationSelector {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.stations.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "StationCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! StationCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! StationCell
         
         // Fetches the appropriate meal for the data source layout.
-        let station = self.stations[indexPath.row]
+        let station = self.stations[(indexPath as NSIndexPath).row]
         
         cell.stationLabel.text = station.name
         
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let station = self.stations[indexPath.row]
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let station = self.stations[(indexPath as NSIndexPath).row]
         
         self.station = station.abbr
         
-        performSegueWithIdentifier("showStation", sender: self)
+        performSegue(withIdentifier: "showStation", sender: self)
     }
     
     
@@ -70,8 +70,8 @@ class DeparturesViewController: UITableViewController, StationSelector {
         // Dispose of any resources that can be recreated.
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let stationController = segue.destinationViewController as? StationViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let stationController = segue.destination as? StationViewController {
             stationController.delegate = self
         }
     }    
