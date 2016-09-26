@@ -9,15 +9,29 @@
 /* Begin PBXBuildFile section */
 		0666C8F17726010A69434769 /* Pods_Simple_Bart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C86CC8B79F349C9CBBC9292 /* Pods_Simple_Bart.framework */; };
 		4800EEA31D984B8A00F0E48B /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54D053CB1D1A2A6900076586 /* keys.plist */; };
-		541886741D98EBA600B3F5EA /* src in Resources */ = {isa = PBXBuildFile; fileRef = 541886731D98EBA600B3F5EA /* src */; };
 		54CE02831D1A040200BEC2A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CE02811D1A040200BEC2A5 /* Main.storyboard */; };
 		54CE02851D1A040200BEC2A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54CE02841D1A040200BEC2A5 /* Assets.xcassets */; };
 		54CE02881D1A040200BEC2A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CE02861D1A040200BEC2A5 /* LaunchScreen.storyboard */; };
+		54E934F41D9903020072A89C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E934E01D9903020072A89C /* AppDelegate.swift */; };
+		54E934F51D9903020072A89C /* AbstractBartStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E934E31D9903020072A89C /* AbstractBartStation.swift */; };
+		54E934F61D9903020072A89C /* AllBartStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E934E41D9903020072A89C /* AllBartStations.swift */; };
+		54E934F71D9903020072A89C /* BartStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E934E51D9903020072A89C /* BartStation.swift */; };
+		54E934F81D9903020072A89C /* BartStationDepartures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E934E61D9903020072A89C /* BartStationDepartures.swift */; };
+		54E934F91D9903020072A89C /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E934E71D9903020072A89C /* Direction.swift */; };
+		54E934FA1D9903020072A89C /* BartApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E934E81D9903020072A89C /* BartApi.swift */; };
+		54E934FB1D9903020072A89C /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E934E91D9903020072A89C /* HttpClient.swift */; };
+		54E934FC1D9903020072A89C /* SolarizedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E934EB1D9903020072A89C /* SolarizedColor.swift */; };
+		54E934FD1D9903020072A89C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E934EC1D9903020072A89C /* Theme.swift */; };
+		54E934FE1D9903020072A89C /* DeparturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E934EE1D9903020072A89C /* DeparturesViewController.swift */; };
+		54E934FF1D9903020072A89C /* ETDCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E934EF1D9903020072A89C /* ETDCell.swift */; };
+		54E935001D9903020072A89C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E934F01D9903020072A89C /* MapViewController.swift */; };
+		54E935011D9903020072A89C /* StationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E934F11D9903020072A89C /* StationCell.swift */; };
+		54E935021D9903020072A89C /* StationSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E934F21D9903020072A89C /* StationSelector.swift */; };
+		54E935031D9903020072A89C /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E934F31D9903020072A89C /* StationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3C86CC8B79F349C9CBBC9292 /* Pods_Simple_Bart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simple_Bart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		541886731D98EBA600B3F5EA /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = "<group>"; };
 		54CE02781D1A040200BEC2A5 /* Simple Bart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Bart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54CE02821D1A040200BEC2A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		54CE02841D1A040200BEC2A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -26,6 +40,22 @@
 		54D053C41D1A259200076586 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		54D053CB1D1A2A6900076586 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		54D053CD1D1A2A9900076586 /* keys.example.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.example.plist; sourceTree = "<group>"; };
+		54E934E01D9903020072A89C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		54E934E31D9903020072A89C /* AbstractBartStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractBartStation.swift; sourceTree = "<group>"; };
+		54E934E41D9903020072A89C /* AllBartStations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllBartStations.swift; sourceTree = "<group>"; };
+		54E934E51D9903020072A89C /* BartStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartStation.swift; sourceTree = "<group>"; };
+		54E934E61D9903020072A89C /* BartStationDepartures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartStationDepartures.swift; sourceTree = "<group>"; };
+		54E934E71D9903020072A89C /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		54E934E81D9903020072A89C /* BartApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartApi.swift; sourceTree = "<group>"; };
+		54E934E91D9903020072A89C /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		54E934EB1D9903020072A89C /* SolarizedColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolarizedColor.swift; sourceTree = "<group>"; };
+		54E934EC1D9903020072A89C /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		54E934EE1D9903020072A89C /* DeparturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeparturesViewController.swift; sourceTree = "<group>"; };
+		54E934EF1D9903020072A89C /* ETDCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETDCell.swift; sourceTree = "<group>"; };
+		54E934F01D9903020072A89C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		54E934F11D9903020072A89C /* StationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationCell.swift; sourceTree = "<group>"; };
+		54E934F21D9903020072A89C /* StationSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationSelector.swift; sourceTree = "<group>"; };
+		54E934F31D9903020072A89C /* StationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
 		90F43B9D5B69325122E568D6 /* Pods-Simple Bart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Bart.release.xcconfig"; path = "Pods/Target Support Files/Pods-Simple Bart/Pods-Simple Bart.release.xcconfig"; sourceTree = "<group>"; };
 		96D1B95C68D53788B34F1BF6 /* Pods-Simple Bart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Bart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Simple Bart/Pods-Simple Bart.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,13 +113,68 @@
 		54CE027A1D1A040200BEC2A5 /* Simple Bart */ = {
 			isa = PBXGroup;
 			children = (
-				541886731D98EBA600B3F5EA /* src */,
+				54E934DF1D9903020072A89C /* src */,
 				54CE02811D1A040200BEC2A5 /* Main.storyboard */,
 				54CE02841D1A040200BEC2A5 /* Assets.xcassets */,
 				54CE02861D1A040200BEC2A5 /* LaunchScreen.storyboard */,
 				54CE02891D1A040200BEC2A5 /* Info.plist */,
 			);
 			path = "Simple Bart";
+			sourceTree = "<group>";
+		};
+		54E934DF1D9903020072A89C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				54E934E01D9903020072A89C /* AppDelegate.swift */,
+				54E934E11D9903020072A89C /* bart */,
+				54E934EA1D9903020072A89C /* color */,
+				54E934ED1D9903020072A89C /* controllers */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		54E934E11D9903020072A89C /* bart */ = {
+			isa = PBXGroup;
+			children = (
+				54E934E21D9903020072A89C /* api */,
+				54E934E81D9903020072A89C /* BartApi.swift */,
+				54E934E91D9903020072A89C /* HttpClient.swift */,
+			);
+			path = bart;
+			sourceTree = "<group>";
+		};
+		54E934E21D9903020072A89C /* api */ = {
+			isa = PBXGroup;
+			children = (
+				54E934E31D9903020072A89C /* AbstractBartStation.swift */,
+				54E934E41D9903020072A89C /* AllBartStations.swift */,
+				54E934E51D9903020072A89C /* BartStation.swift */,
+				54E934E61D9903020072A89C /* BartStationDepartures.swift */,
+				54E934E71D9903020072A89C /* Direction.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		54E934EA1D9903020072A89C /* color */ = {
+			isa = PBXGroup;
+			children = (
+				54E934EB1D9903020072A89C /* SolarizedColor.swift */,
+				54E934EC1D9903020072A89C /* Theme.swift */,
+			);
+			path = color;
+			sourceTree = "<group>";
+		};
+		54E934ED1D9903020072A89C /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				54E934EE1D9903020072A89C /* DeparturesViewController.swift */,
+				54E934EF1D9903020072A89C /* ETDCell.swift */,
+				54E934F01D9903020072A89C /* MapViewController.swift */,
+				54E934F11D9903020072A89C /* StationCell.swift */,
+				54E934F21D9903020072A89C /* StationSelector.swift */,
+				54E934F31D9903020072A89C /* StationViewController.swift */,
+			);
+			path = controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,7 +244,6 @@
 				54CE02881D1A040200BEC2A5 /* LaunchScreen.storyboard in Resources */,
 				54CE02851D1A040200BEC2A5 /* Assets.xcassets in Resources */,
 				54CE02831D1A040200BEC2A5 /* Main.storyboard in Resources */,
-				541886741D98EBA600B3F5EA /* src in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +302,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54E934F61D9903020072A89C /* AllBartStations.swift in Sources */,
+				54E934F41D9903020072A89C /* AppDelegate.swift in Sources */,
+				54E935011D9903020072A89C /* StationCell.swift in Sources */,
+				54E934FC1D9903020072A89C /* SolarizedColor.swift in Sources */,
+				54E934FB1D9903020072A89C /* HttpClient.swift in Sources */,
+				54E934FA1D9903020072A89C /* BartApi.swift in Sources */,
+				54E934F81D9903020072A89C /* BartStationDepartures.swift in Sources */,
+				54E935031D9903020072A89C /* StationViewController.swift in Sources */,
+				54E935001D9903020072A89C /* MapViewController.swift in Sources */,
+				54E934F51D9903020072A89C /* AbstractBartStation.swift in Sources */,
+				54E934FD1D9903020072A89C /* Theme.swift in Sources */,
+				54E934F71D9903020072A89C /* BartStation.swift in Sources */,
+				54E934FF1D9903020072A89C /* ETDCell.swift in Sources */,
+				54E934F91D9903020072A89C /* Direction.swift in Sources */,
+				54E934FE1D9903020072A89C /* DeparturesViewController.swift in Sources */,
+				54E935021D9903020072A89C /* StationSelector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
