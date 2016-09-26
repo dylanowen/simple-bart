@@ -39,7 +39,7 @@ extension DataRequest {
 
     @discardableResult
     public func responseXMLDocument(_ completionHandler: @escaping (DataResponse<AEXMLDocument>) -> Void) -> Self {
-        return .response(queue: nil, responseSerializer: DataRequest.XMLResponseSerializer(), completionHandler: completionHandler)
+        return self.response(queue: nil, responseSerializer: DataRequest.XMLResponseSerializer(), completionHandler: completionHandler)
     }
 }
 
@@ -75,6 +75,6 @@ extension DataRequest {
             }
         }
 
-        return .response(responseSerializer: responseSerializer, completionHandler: completionHandler)
+        return self.response(responseSerializer: responseSerializer, completionHandler: completionHandler)
     }
 }

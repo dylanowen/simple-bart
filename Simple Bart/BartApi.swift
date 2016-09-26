@@ -25,7 +25,7 @@ class BartApi {
         print("Using key: " + BartApi.key)
     }
     
-    func getStations(_ cached: Bool = true, callback: (DataResponse<AllBartStations>) -> Void) {
+    func getStations(_ cached: Bool = true, callback: @escaping (DataResponse<AllBartStations>) -> Void) {
         let request = buildRequest("stn", parameters: ["cmd": "stns"])
         
         request.responseObject(callback)
